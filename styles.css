@@ -2443,10 +2443,11 @@ button:disabled, .button:disabled {
 
   .menu-toggle-btn::after {
     /* Verkleinert die Punkte selbst */
-    font-size: 10px;
+    font-size: 5px;
     
     /* Verringert den Abstand zwischen den Punkten */
     text-shadow: 0 -7px 0 var(--ink),
                  0 7px 0 var(--ink);
   }
+
 }
