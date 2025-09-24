@@ -1751,13 +1751,13 @@ button.success:hover, .button.success:hover {
 /* NEU: Icon für das Detail-Menü mit reinem CSS erstellen */
 .menu-toggle-btn::after {
   content: '●'; /* Erzeugt den mittleren Punkt */
-  font-size: 12px;
+  font-size: 8px;
   color: var(--ink);
   line-height: 0;
 
   /* Erzeugt den oberen und unteren Punkt als Schatten */
-  text-shadow: 0 -8px 0 var(--ink),
-               0 8px 0 var(--ink);
+  text-shadow: 0 -px 0 var(--ink),
+               0 7px 0 var(--ink);
 }
 
 /* Verhindert, dass das Icon beim Hovern verschwindet */
@@ -2429,5 +2429,6 @@ button:disabled, .button:disabled {
   text-decoration: underline;
   color: var(--ink);
 }
+
 
 
