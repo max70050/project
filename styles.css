@@ -2433,19 +2433,43 @@ button:disabled, .button:disabled {
 /* =================================================================== */
 /* ====== ANPASSUNG FÜR DAS MENÜ-ICON AUF MOBILGERÄTEN (KORRIGIERT) ====== */
 /* =================================================================== */
+/* =================================================================== */
+/* ====== NEUES, STABILES MENÜ-ICON FÜR ALLE GERÄTE (FINALE LÖSUNG) ====== */
+/* =================================================================== */
 
+/* 1. Stellt sicher, dass der Button immer ein perfekter Kreis bleibt */
+.menu-toggle-btn {
+  flex-shrink: 0; /* Verhindert das Stauchen in Flex-Containern */
+}
+
+/* 2. Entfernt die alte Methode zur Erzeugung der Punkte */
+.menu-toggle-btn::after {
+  content: ''; /* WICHTIG: Inhalt leeren */
+  text-shadow: none; /* Sicherstellen, dass kein alter Schatten mehr da ist */
+  
+  /* 3. Zeichnet die drei Punkte als stabiles Hintergrundbild */
+  width: 4px; /* Breite eines einzelnen Punktes */
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, var(--ink) 100%, transparent 100%),
+    radial-gradient(circle, var(--ink) 100%, transparent 100%),
+    radial-gradient(circle, var(--ink) 100%, transparent 100%);
+  background-size: 100% 4px; /* Größe eines einzelnen Punktes */
+  background-position: center 6px, center center, center calc(100% - 6px); /* Position: Oben, Mitte, Unten */
+  background-repeat: no-repeat;
+}
+
+/* 4. Passt die Größe für die mobile Ansicht an */
 @media (max-width: 767px) {
   .menu-toggle-btn {
-    width: 34px;
-    height: 34px;
-    flex-shrink: 0; /* NEU: Verhindert, dass der Button verformt wird */
+    width: 36px;
+    height: 36px;
   }
-
+  
   .menu-toggle-btn::after {
-    font-size: 10px;
-    line-height: 0; /* Wichtig für die korrekte Positionierung */
-    /* Abstand der Punkte weiter reduziert */
-    text-shadow: 0 -6px 0 var(--ink),
-                 0 6px 0 var(--ink);
+    width: 3px; /* Punkte etwas kleiner machen */
+    background-size: 100% 3px;
+    /* Abstand der Punkte anpassen */
+    background-position: center 7px, center center, center calc(100% - 7px);
   }
 }
