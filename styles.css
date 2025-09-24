@@ -2431,23 +2431,21 @@ button:disabled, .button:disabled {
 }
 
 /* =================================================================== */
-/* ====== ANPASSUNG FÜR DAS MENÜ-ICON AUF MOBILGERÄTEN ====== */
+/* ====== ANPASSUNG FÜR DAS MENÜ-ICON AUF MOBILGERÄTEN (KORRIGIERT) ====== */
 /* =================================================================== */
 
 @media (max-width: 767px) {
   .menu-toggle-btn {
-    /* Verkleinert den weißen Kreis des Buttons */
     width: 34px;
     height: 34px;
+    flex-shrink: 0; /* NEU: Verhindert, dass der Button verformt wird */
   }
 
   .menu-toggle-btn::after {
-    /* Verkleinert die Punkte selbst */
-    font-size: 5px;
-    
-    /* Verringert den Abstand zwischen den Punkten */
-    text-shadow: 0 -7px 0 var(--ink),
-                 0 7px 0 var(--ink);
+    font-size: 10px;
+    line-height: 0; /* Wichtig für die korrekte Positionierung */
+    /* Abstand der Punkte weiter reduziert */
+    text-shadow: 0 -6px 0 var(--ink),
+                 0 6px 0 var(--ink);
   }
-
 }
