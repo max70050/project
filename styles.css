@@ -174,7 +174,7 @@ button.btn-link.danger {
 }
 .card-like-btn {
   background: none; border: none; padding: 0; cursor: pointer;
-  transition: transform .2s ease;
+
 }
 /* Die Hover-Animation wird nur auf Geräten mit Maus aktiviert */
 @media (hover: hover) {
@@ -2406,4 +2406,5 @@ button:disabled, .button:disabled {
     font-weight: bold;
     font-size: 1.1em;
     color: #1a73e8;
+
 }
