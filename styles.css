@@ -28,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  touch-action: manipulation;
 }
 
 main {
@@ -1206,4 +1207,5 @@ main {
         width: 100%;
         max-width: 300px;
     }
+
 }
