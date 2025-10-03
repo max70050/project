@@ -855,7 +855,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let lastTouchEnd = 0;
         button.addEventListener('touchend', (event) => {
             const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 500) { // 500ms als Schwelle für Doppelklick
+            if (now - lastTouchEnd <= 100) { // 500ms als Schwelle für Doppelklick
                 event.preventDefault();
             }
             lastTouchEnd = now;
@@ -1382,3 +1382,4 @@ reportedOrderDetailContent.addEventListener('click', async (e) => {
     }
 
 });
+
