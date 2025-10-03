@@ -326,7 +326,14 @@ main {
     background: #fafafa;
     cursor: pointer;
     transition: background 0.2s;
+  touch-action: manipulation;
 }
+
+/* Verhindert Zoom bei schnellem Tippen auf die +/- Buttons */
+.quantity-btn {
+  touch-action: manipulation;
+}
+
 .quantity-btn:hover {
     background: var(--brand);
     color: #fff;
@@ -1209,3 +1216,4 @@ main {
     }
 
 }
+
