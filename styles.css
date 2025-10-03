@@ -28,10 +28,16 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  touch-action: manipulation;
 }
 
 main {
     flex-grow: 1;
+}
+
+/* Verhindert Zoom bei schnellem Tippen auf die +/- Buttons */
+.quantity-btn {
+  touch-action: manipulation;
 }
 
 /* =================================================================== */
@@ -1206,4 +1212,5 @@ main {
         width: 100%;
         max-width: 300px;
     }
+
 }
