@@ -849,6 +849,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Optionen befüllen
     populateHours();
     populateMinutes();
+
+       // NEU: Verhindert Doppelklick-Zoom auf allen Buttons
+    document.querySelectorAll('button').forEach(button => {
+        let lastTouchEnd = 0;
+        button.addEventListener('touchend', (event) => {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 500) { // 500ms als Schwelle für Doppelklick
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    });
 });
 
 customHourSelect.addEventListener('change', () => {
@@ -1368,4 +1380,5 @@ reportedOrderDetailContent.addEventListener('click', async (e) => {
             e.target.disabled = false;
         }
     }
+
 });
