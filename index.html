@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dæli - Deine Schulmensa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logoschulmensa.jpg" alt="dæli Logo">
+            </a>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <nav class="nav-links" id="nav-links">
+                <a href="#" id="home-link">Startseite</a>
+                <a href="#" id="order-link">Vorbestellen</a>
+                <a href="#" id="user-orders-link" style="display: none;">Meine Bestellungen</a>
+                <a href="#" id="management-orders-link" style="display: none;">Bestellungen</a>
+                <a href="#" id="admin-area-link" style="display: none;">Admin</a>
+                <a href="#" id="admintools-link" style="display: none;">Admintools</a>
+            </nav>
+            <div class="nav-user-actions">
+                <a href="#" id="user-profile-link" style="display: none;"></a>
+                <button class="nav-button" id="auth-button">Anmelden</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="welcome-section" class="welcome-section">
+        <div class="welcome-content">
+            <h1>Willkommen bei dæli</h1>
+            <p>Dein Essen, nur einen Klick entfernt. Bestelle jetzt einfach online vor und spare Zeit in den Pausen.</p>
+            <button class="cta-button" id="order-cta-button">Jetzt bestellen</button>
+        </div>
+    </main>
+
+    <main id="order-section" style="display: none;">
+        <div class="menu-container">
+            <h1>Speisekarte</h1>
+
+            <div class="menu-category">
+                <h2>Wraps</h2>
+                <div class="menu-item" data-id="1" data-name="Halber Schinken Wrap" data-price="3.00">
+                    <div class="item-info"><span class="item-name">Halber Schinken Wrap</span><span class="item-price">3,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="2" data-name="Halber Sweet Chili Chicken Wrap" data-price="3.00">
+                    <div class="item-info"><span class="item-name">Halber Sweet Chili Chicken Wrap</span><span class="item-price">3,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="3" data-name="Halber Hähnchen Kebab" data-price="3.00">
+                    <div class="item-info"><span class="item-name">Halber Hähnchen Kebab Wrap</span><span class="item-price">3,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="4" data-name="Ganzer Schinken Wrap" data-price="6.00">
+                    <div class="item-info"><span class="item-name">Ganzer Schinken Wrap</span><span class="item-price">6,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="5" data-name="Ganzer Sweet Chili Chicken Wrap" data-price="6.00">
+                    <div class="item-info"><span class="item-name">Ganzer Sweet Chili Chicken Wrap</span><span class="item-price">6,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="6" data-name="Ganzer Hähnchen Kebab" data-price="6.00">
+                    <div class="item-info"><span class="item-name">Ganzer Hähnchen Kebab Wrap</span><span class="item-price">6,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Pizzen</h2>
+                <div class="menu-item" data-id="7" data-name="Viertel Pizza Margherita" data-price="2.50">
+                    <div class="item-info"><span class="item-name">Viertel Pizza Margherita</span><span class="item-price">2,50 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="8" data-name="Viertel Pizza Diavolo" data-price="2.50">
+                    <div class="item-info"><span class="item-name">Viertel Pizza Diavolo</span><span class="item-price">2,50 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="9" data-name="Viertel Pizza Thunfisch" data-price="2.50">
+                    <div class="item-info"><span class="item-name">Viertel Pizza Thunfisch</span><span class="item-price">2,50 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="10" data-name="Viertel Pizza Funghi" data-price="2.50">
+                    <div class="item-info"><span class="item-name">Viertel Pizza Funghi</span><span class="item-price">2,50 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="11" data-name="Halbe Pizza Margherita" data-price="4.00">
+                    <div class="item-info"><span class="item-name">Halbe Pizza Margherita</span><span class="item-price">4,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="12" data-name="Halbe Pizza Diavolo" data-price="4.00">
+                    <div class="item-info"><span class="item-name">Halbe Pizza Diavolo</span><span class="item-price">4,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="13" data-name="Halbe Pizza Thunfisch" data-price="4.00">
+                    <div class="item-info"><span class="item-name">Halbe Pizza Thunfisch</span><span class="item-price">4,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="14" data-name="Halbe Pizza Funghi" data-price="4.00">
+                    <div class="item-info"><span class="item-name">Halbe Pizza Funghi</span><span class="item-price">4,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="15" data-name="Ganze Pizza Margherita" data-price="8.00">
+                    <div class="item-info"><span class="item-name">Ganze Pizza Margherita</span><span class="item-price">8,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="16" data-name="Ganze Pizza Diavolo" data-price="8.00">
+                    <div class="item-info"><span class="item-name">Ganze Pizza Diavolo</span><span class="item-price">8,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="17" data-name="Ganze Pizza Thunfisch" data-price="8.00">
+                    <div class="item-info"><span class="item-name">Ganze Pizza Thunfisch</span><span class="item-price">8,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="18" data-name="Ganze Pizza Funghi" data-price="8.00">
+                    <div class="item-info"><span class="item-name">Ganze Pizza Funghi</span><span class="item-price">8,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Focaccias</h2>
+                <div class="menu-item" data-id="19" data-name="Mozzarella Focaccia" data-price="4.00">
+                    <div class="item-info"><span class="item-name">Focaccia Mozzarella</span><span class="item-price">4,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="20" data-name="Veggi Love Focaccia" data-price="4.00">
+                    <div class="item-info"><span class="item-name">Focaccai Veggie Love</span><span class="item-price">4,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+            </div>
+            
+            <div class="menu-category">
+                <h2>Flammkuchen</h2>
+                <div class="menu-item" data-id="21" data-name="Halber Flammkuchen Traditionell" data-price="3.50">
+                    <div class="item-info"><span class="item-name">Halber Flammkuchen Traditionell</span><span class="item-price">3,50 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="22" data-name="Halber Flammkuchen Mediterran" data-price="3.50">
+                    <div class="item-info"><span class="item-name">Halber Flammkuchen Mediterran</span><span class="item-price">3,50 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                <div class="menu-item" data-id="23" data-name="Ganzer Flammkuchen Traditionell" data-price="6.00">
+                    <div class="item-info"><span class="item-name">Ganzer Flammkuchen Traditionell</span><span class="item-price">6,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+                 <div class="menu-item" data-id="24" data-name="Ganzer Flammkuchen Mediterran" data-price="6.00">
+                    <div class="item-info"><span class="item-name">Ganzer Flammkuchen Mediterran</span><span class="item-price">6,00 €</span></div>
+                    <div class="quantity-selector"><button class="quantity-btn minus-btn">-</button><span class="quantity">0</span><button class="quantity-btn plus-btn">+</button></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cart-container">
+            <h2>Warenkorb</h2>
+            <ul id="cart-items-list">
+                <li id="cart-placeholder">Dein Warenkorb ist leer.</li>
+            </ul>
+            <div class="cart-summary">
+                <div class="total-price">
+                    <span>Gesamt:</span>
+                    <span id="total-price-value">0,00 €</span>
+                </div>
+                 <div class="pickup-day-picker">
+                    <label>Abholtag:</label>
+                    <div class="day-selector" id="pickup-day-selector">
+                        <button data-day="Montag">Mo</button>
+                        <button data-day="Dienstag">Di</button>
+                        <button data-day="Mittwoch">Mi</button>
+                        <button data-day="Donnerstag">Do</button>
+                        <button data-day="Freitag">Fr</button>
+                    </div>
+                    <small class="week-notice">Bestellungen sind nur für die aktuelle Woche möglich. Ab Samstag für die Folgewoche.</small>
+                </div>
+                <div class="pickup-time-picker">
+                    <label>Gewünschte Abholzeit:</label>
+                    <div class="time-inputs">
+                        <div class="custom-select-wrapper">
+                            <div class="custom-select" id="custom-hour-select">
+                                <div class="custom-select-trigger"><span>--</span><div class="arrow"></div></div>
+                                <div class="custom-options" id="custom-hour-options">
+                                </div>
+                            </div>
+                        </div>
+                        <span>:</span>
+                        <div class="custom-select-wrapper">
+                            <div class="custom-select" id="custom-minute-select">
+                                <div class="custom-select-trigger"><span>--</span><div class="arrow"></div></div>
+                                <div class="custom-options" id="custom-minute-options">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="cart-notices">
+                    <div id="select-day-notice" class="cart-notice" style="display: none;">Bitte wähle einen Abholtag.</div>
+                    <div id="select-time-notice" class="cart-notice" style="display: none;">Bitte wähle eine Abholzeit.</div>
+                    <div id="profile-completion-notice" class="cart-notice" style="display: none;"></div>
+                    <div id="max-order-value-notice" class="cart-notice" style="display: none;"></div>
+                </div>
+               
+                <button id="checkout-btn" class="cta-button" disabled>Bestellung abschließen</button>
+            </div>
+        </div>
+    </main>
+    
+    <main id="profile-section" style="display: none;">
+        <div class="profile-container">
+            <h1>Profileinstellungen</h1>
+
+            <div class="profile-card">
+                <h2>Kontoinformationen</h2>
+                <div class="profile-field">
+                    <label for="profile-email">E-Mail-Adresse</label>
+                    <input type="email" id="profile-email" disabled>
+                </div>
+                <div class="profile-field">
+                    <label for="profile-password">Passwort</label>
+                    <div class="password-display-wrapper">
+                        <input type="password" id="profile-password" value="••••••••••" disabled>
+                        <button id="reset-password-btn" class="secondary-button">Passwort zurücksetzen</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <h2>Benutzerprofil</h2>
+                <div class="profile-field">
+                    <label for="profile-username">Benutzername</label>
+                    <input type="text" id="profile-username" placeholder="Dein Benutzername">
+                    <small id="username-limit-info">Kann 2 Mal pro Monat geändert werden.</small>
+                </div>
+                <div class="profile-field">
+                    <label for="profile-firstname">Vorname</label>
+                    <input type="text" id="profile-firstname" placeholder="Dein Vorname">
+                </div>
+                <div class="profile-field">
+                    <label for="profile-lastname">Nachname</label>
+                    <input type="text" id="profile-lastname" placeholder="Dein Nachname">
+                    <small id="fullname-limit-info">Vor- und Nachname können insgesamt nur 2 Mal geändert werden.</small>
+                </div>
+                <div class="profile-button-group">
+                    <button id="save-profile-btn" class="cta-button">Profil speichern</button>
+                    <button id="discard-profile-btn" class="secondary-button">Verwerfen</button>
+                </div>
+            </div>
+            
+            <hr class="profile-separator">
+            
+            <h3>Konto löschen</h3>
+            <br>
+            <div class="profile-card danger-zone">
+                
+                <p class="danger-zone-text">Wenn du dein Konto löschst, werden alle deine Daten endgültig gelöscht. Dieser Vorgang kann nicht rückgängig gemacht werden.</p>
+                <button id="delete-account-btn" class="danger-button">Konto löschen</button>
+            </div>
+            
+        </div>
+    </main>
+
+    <main id="user-orders-section" class="orders-display-section" style="display: none;">
+        <div class="orders-container">
+            <h1>Deine Bestellungen</h1>
+            <div class="order-day-tabs">
+                <button data-day="Montag">Montag</button>
+                <button data-day="Dienstag">Dienstag</button>
+                <button data-day="Mittwoch">Mittwoch</button>
+                <button data-day="Donnerstag">Donnerstag</button>
+                <button data-day="Freitag">Freitag</button>
+            </div>
+            <div id="user-orders-list">
+                <p>Hier siehst du bald eine Übersicht deiner vergangenen Bestellungen.</p>
+            </div>
+        </div>
+    </main>
+
+    <main id="management-orders-section" class="orders-display-section" style="display: none;">
+        <div class="orders-container">
+            <h1>Alle Bestellungen</h1>
+            <div class="order-day-tabs">
+                <button data-day="Montag">Montag</button>
+                <button data-day="Dienstag">Dienstag</button>
+                <button data-day="Mittwoch">Mittwoch</button>
+                <button data-day="Donnerstag">Donnerstag</button>
+                <button data-day="Freitag">Freitag</button>
+            </div>
+            <div id="management-orders-list">
+                <p>Hier werden alle eingegangenen Bestellungen für Co-Admins und Admins angezeigt.</p>
+            </div>
+        </div>
+    </main>
+    <main id="admin-area-section" class="placeholder-section" style="display: none;">
+        <h1>Admin-Bereich</h1>
+        <p>Dieser Bereich ist für Administratoren reserviert.</p>
+    </main>
+    <main id="admintools-section" class="orders-display-section" style="display: none;">
+        <div class="orders-container">
+            <h1>Admintools</h1>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-value" id="stats-user-count">...</span>
+                    <span class="stat-label">Registrierte Nutzer</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stats-open-orders-count">...</span>
+                    <span class="stat-label">Offene Bestellungen</span>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h2>Gemeldete Bestellungen</h2>
+                <div id="reported-orders-list">
+                    <p>Hier werden gemeldete Bestellungen zur Überprüfung angezeigt.</p>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <h2>Bestellungen</h2>
+                <p class="danger-zone-text" style="margin-bottom: 15px;">Löscht alle Bestellungen, die älter als 7 Tage sind, endgültig aus der Datenbank, um Speicherplatz frei zu halten.</p>
+                <button id="delete-old-orders-btn" class="danger-button">Alte Bestellungen löschen</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="auth-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+
+            <div id="login-view">
+                <h2>Anmelden</h2>
+                <input type="email" id="login-email" placeholder="E-Mail">
+                <div class="password-wrapper">
+                    <input type="password" id="login-password" placeholder="Passwort">
+                    <i class="fa-solid fa-eye-slash" id="toggle-login-password"></i>
+                </div>
+<br>
+              
+                <button id="login-btn">Anmelden</button>
+                  <div class="divider">ODER</div>
+<button id="google-signin-btn" class="google-signin-btn">
+    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+    Mit Google anmelden
+</button>
+                
+               
+                <p class="toggle-link-text"><a href="#" id="show-password-reset">Passwort vergessen?</a></p>
+                <p class="toggle-link-text">Du hast noch kein Konto? <a href="#" id="show-register">Jetzt registrieren</a></p>
+            </div>
+
+            <div id="register-view" style="display: none;">
+                <h2>Registrieren</h2>
+                <input type="text" id="register-username" placeholder="Benutzername">
+                <div id="username-error-message" style="display: none; color: var(--error); text-align: left; font-size: 13px; margin-top: 5px;"></div>
+                <input type="email" id="register-email" placeholder="E-Mail">
+                <div class="password-wrapper">
+                    <input type="password" id="register-password" placeholder="Passwort">
+                    <i class="fa-solid fa-eye-slash" id="toggle-register-password"></i>
+                </div>
+                <div id="password-strength-feedback">
+                    <p>Das Passwort muss enthalten:</p>
+                    <ul>
+                        <li id="length-check">Mindestens 8 Zeichen</li>
+                        <li id="uppercase-check">Mindestens einen Großbuchstaben</li>
+                        <li id="number-check">Mindestens eine Zahl</li>
+                    </ul>
+                </div>
+                
+                <button id="register-btn" disabled>Konto erstellen</button>
+                <div style="text-align: center; margin: 20px 0; color: #888;">ODER</div>
+                <button id="google-register-btn" class="google-signin-btn">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+                    Mit Google registrieren
+                </button>
+                <p class="toggle-link-text">Du hast bereits ein Konto? <a href="#" id="show-login">Hier anmelden</a></p>
+            </div>
+
+
+            <div id="google-username-view" style="display: none;">
+                <h2>Noch ein Schritt</h2>
+                <p class="modal-info-text">Willkommen! Bitte wähle einen Benutzernamen, um deine Registrierung abzuschließen.</p>
+                <input type="text" id="google-username-input" placeholder="Wähle einen Benutzernamen">
+                <div id="username-error-message" style="display: none; color: var(--error); text-align: left; font-size: 13px; margin-top: 5px;"></div>
+                <button id="google-username-submit-btn">Benutzernamen speichern</button>
+            </div>
+            <div id="password-reset-view" style="display: none;">
+                <h2>Passwort zurücksetzen</h2>
+                <p class="modal-info-text">Gib deine E-Mail-Adresse ein. Wir senden dir einen Link, mit dem du dein Passwort zurücksetzen kannst.</p>
+                <input type="email" id="reset-email" placeholder="Deine E-Mail-Adresse">
+                <button id="send-reset-email-btn">Link anfordern</button>
+                <p class="toggle-link-text"><a href="#" id="back-to-login">Zurück zum Login</a></p>
+            </div>
+            
+            <div id="verification-message" class="styled-message-box" style="display: none;">
+                <i class="fa-solid fa-envelope-circle-check"></i>
+                <h2>Fast geschafft!</h2>
+                <p>Eine Bestätigungs-E-Mail wurde an deine Adresse versendet. Bitte klicke auf den Link in der E-Mail, um dein Konto zu aktivieren.</p>
+                <p><strong>Bitte schau auch in deinem Spam-Ordner nach!</strong></p>
+                <p>Danach kannst du dieses Fenster schließen und dich anmelden.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="reauth-delete-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-reauth-button">&times;</span>
+            <h2>Bestätigung erforderlich</h2>
+            <p class="modal-info-text">Um dein Konto endgültig zu löschen, gib bitte zur Sicherheit dein aktuelles Passwort ein.</p>
+            <div class="password-wrapper">
+                <input type="password" id="reauth-password" placeholder="Aktuelles Passwort">
+                <i class="fa-solid fa-eye-slash" id="toggle-reauth-password"></i>
+            </div>
+            <button id="confirm-delete-btn" class="danger-button">Konto endgültig löschen</button>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-checkout-button">&times;</span>
+            <h2>Bestellung bestätigen</h2>
+            
+            <div class="checkout-summary-display">
+                 <div class="checkout-summary-item">
+                    <span>Abholtag:</span>
+                    <strong><span id="checkout-pickup-day">--</span></strong>
+                </div>
+                <div class="checkout-summary-item">
+                    <span>Abholzeit:</span>
+                    <strong><span id="checkout-pickup-time">--:--</span> Uhr</strong>
+                </div>
+                <div class="checkout-summary-item">
+                    <span>Gesamtpreis:</span>
+                    <strong><span id="checkout-total-price">0,00 €</span></strong>
+                </div>
+            </div>
+
+            <div class="payment-options">
+                <p class="payment-title">Wähle deine Zahlungsmethode</p>
+                <button class="payment-btn" disabled>
+                    PayPal <span class="coming-soon">kommt bald</span>
+                </button>
+                <button class="payment-btn" disabled>
+                    Apple Pay <span class="coming-soon">kommt bald</span>
+                </button>
+                <button class="payment-btn" disabled>
+                    SEPA <span class="coming-soon">kommt bald</span>
+                </button>
+                 <button class="payment-btn" disabled>
+                    Karte <span class="coming-soon">kommt bald</span>
+                </button>
+            </div>
+              <div class="divider">ODER</div>
+
+            <div class="modal-button-group">
+                <button id="confirm-order-btn" class="cta-button">
+                    Bar an der Kasse zahlen
+                    <small>(ggf. mit Wartezeiten)</small>
+                </button>
+                <button id="cancel-order-btn" class="secondary-button">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="reported-order-detail-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Gemeldete Bestellung</h2>
+            <div id="reported-order-detail-content">
+                </div>
+        </div>
+    </div>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Öffnungszeiten</h4>
+                <p>Kommt bald</p>
+            </div>
+            <div class="footer-section">
+                <h4>Vorbestellungen</h4>
+                <p>Montag - Freitag: 11:00 - 14:00 Uhr</p>
+            </div>
+            <div class="footer-section">
+                <h4>Rechtliches</h4>
+                <p><a href="impressum.html">Impressum</a></p>
+                <p>Support: <br><a href="mailto:max.70050hi@gmail.com">max.70050hi@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div id="cookie-banner" class="cookie-banner">
+            <div class="cookie-banner-content">
+                <p>
+                 Wir verwenden technisch notwendige Cookies, um die Funktionalität dieser Webseite zu gewährleisten, beispielsweise um deinen Login-Status zu speichern. Weitere Informationen findest du in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+                </p>
+            <div class="cookie-banner-actions">
+            <button id="cookie-accept-btn">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+v0.1
+anmelden funktioniert (ohne effekt)
+
+v0.11
+anmelden/registrieren funktioniert
+
+v0.21
+-redesign der Startseite Anmelde/Registreirseite/etc.
+-Passwort Vergessen btn hinzugefügt bei anmeldung
+-mindestanforderungen für Passwort
+-benutzername hinzugefügt
+-profil einstellungen hinzugefügt
+-konto löschen funktion (bedingt) hinzugefügt
+
+v0.22
+-Bug bei anmeldung gefixt
+-Mit enter Anmeldebutton/etc. klickbar
+
+v0.221
+-bestellen ohne logik hinzugefügt
+
+v0.222
+-Meine Bestellungen ohne funktion für angemeldete Nutzer hinzugefügt
+-Bestellungen ohne funktion für CoAdmins und Admins hinzugefügt
+-Admintools für Admin ohne funktion hinzugefügt
+
+v0.3
+-maximaler Bestellbetrag 150€
+-Ab 10€ Profil verfolständigen
+
+v0.31
+-Anzeigen werden nun auch mit dem Konto gelöscht
+-Nachname und Vorname können jetzt getrennt 2-mal bearbeitet werden
+
+v0.311
+-fix bei dem pickup time nicht an der richtigen stelle war
+
+v0.4
+-diverse anpassung für Hnady
+
+v4.01
+-
+
+v4.02
+-melden button ohne funktion hinzugefügt
+-disclaimer beim absenedn der bstellung hinzugefügt
+-fotter hinzugefügt
+-öffnungszeiten hinzugefügt
+-impresssum (leer) hinzugefügt
+
+
+v0.41
+-mehr zeiten zur abholung
+-logik für melden
+
+v0.411
+-firebaserules für melden angepasst
+-abstand der buttons bei bestellungen angepasst
+
+v0.412
+-logik um anzeien nach 7tagen ganz zu löschen
+
+v0.413
+-alle alten Anzeigen-löschen Button hinzugefügt
+
+v0.42
+-impressum Hinzugefügt  
+
+v0.421
+-Email-adresse für support hinzugefügt
+
+v0.422
+-Mit google anmelden Button hinzugefügt
+-Mit google registrieren Button hinzugefügt
+
+v0.423
+-Hamburgermenü desig angepasst
+-Hamburgermenü kann nun auch durch klicken daneben geschlossen werden
+
+v0.43
+-Cookies-banner hinzugefügt
+-Datenschutzblatt verlinkt
+
+v0.431
+-Notizen in styles.css entfernt
+
+v1.0
+-Notizen in app.js entfernt
+-Notizen in firestorerules.js entfernt
+-Restliche Notizen entfernt und aufgeräumt
+
+v1.01
+-Bug fixes bei firebaserules
+-rechtschreibfehler korigiert
+
+v1.02
+-Navileiste bug gefixt bei dem sie auf dem handy nicht ganz oben war
+
+v1.1
+-Tage zur abolung hinzugefügt
+-Bestellungen werden nun nach der Uhrzeit geordnet
+
+v1.11
+-Animationen hinzugefügt beim drüber hovern
+
+v1.111
+-Vorbereitet button unter Bestellungen hinzugefügt
+-Geschwindigkeit der zuvor hinzugefügten animatio angepasst
+
+v1.112
+-Wenn kein Name hinterlegt ist wird nun der Benutzename angezeigt
+-Abstand des Einkaufswagens weiter verbessert
+
+v1.12
+-Filter für Benutzernamen hinzugefügt
+-Impressum und Datenschutzblatt angepasst
+
+v1.123
+-Zahlungsarten ohne Funktion hinzugefügt
+
+v1.124
+-Text makieren nicht mehr überall möglich
+-Versuch doppeklickzoom auf handy zu deaktivieren
